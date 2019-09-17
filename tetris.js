@@ -4,14 +4,13 @@ let arr = [];
 let arr9 = [];
 let row = Math.floor(board.clientWidth / 20);
 let col = Math.floor(board.clientHeight / 20);
-for(let i=0; i<4; i++){
+for(let i=0; i<5; i++){
     arr9[i]=[];
-    for(let j=0; j<4; j++){
+    for(let j=0; j<5; j++){
         arr9[i][j] = document.createElement("span");
         next.appendChild(arr9[i][j]);
         arr9[i][j].style.width = "30px"
         arr9[i][j].style.height = "30px";
-        arr9[i][j].style.border = "1px solid black";
     }
 }
 for (let i = 0; i < 20; i++) {
@@ -37,8 +36,8 @@ let nextitem = Math.floor(Math.random() * 3) + 1;
 let id = makeItem(r, c);
 
 function makeItem() {
-    r = 1;
-    c = 1;
+    r = 2;
+    c = 2;
     rotate = 1;
     createremoveitem(nextitem,"inherit",rotate,arr9)
     itemId = nextitem
