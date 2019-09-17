@@ -34,10 +34,10 @@ section{
 #current{
     display: flex;
     flex-wrap: wrap;
-    width: 128px;
-    height: 128px;
-    background-color: aqua;
+    width: 150px;
+    height: 150px;
     margin-bottom: 200px;
+    border: 1px solid black;
 
 }
 #score{
