@@ -5,6 +5,7 @@ let currentElement;
 let perviouselement;
 let TouchStartY;
 let TouchDeltaY;
+let deltaY;
 
 for (let i = 0; i < lines.length; i++) {
     lines[i].addEventListener("mouseenter", animlines);
@@ -35,7 +36,9 @@ function scrolling(e) {
     e.preventDefault();
     e.stopPropagation();
     if (window.innerWidth<=1000){
-        e.deltaY = TouchStartY - e.touches[0].clientY; 
+        deltaY = TouchStartY - e.touches[0].clientY; 
+    }else{
+        deltaY = e.deltaY;
     }
     if (!e.srcElement.id) {
         currentElement = e.srcElement.parentElement;
@@ -43,7 +46,7 @@ function scrolling(e) {
         currentElement = e.srcElement;
     }
     if ((e.srcElement.tagName != "SECTION") && (e.srcElement.tagName != "DIV")) { return }
-    if (e.deltaY > 0) {
+    if (deltaY > 0) {
         if (currentElement.id == "aaa") { return }
         children = currentElement.getElementsByTagName("*");
         let nextchildren = currentElement.nextElementSibling.getElementsByTagName("*");
@@ -54,7 +57,7 @@ function scrolling(e) {
         perviouselement = currentElement;
          animdelete(children);
         animadd(nextchildren);
-    } else if (e.deltaY < 0) {
+    } else if (deltaY < 0) {
         if (currentElement.id == "about") { return }
         children = currentElement.previousElementSibling.getElementsByTagName("*"); 
         let previouschildren = currentElement.getElementsByTagName("*");
