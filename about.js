@@ -25,7 +25,8 @@ function animlinesout(e) {
 for (let i = 0; i < sections.length; i++) {
     sections[i].addEventListener("wheel", scrolling);
     if (window.innerWidth<=600){
-       sections[i].addEventListener("touchend", scrolling);
+       sections[i].addEventListener("touchmove", scrolling);
+        alert("asdsda");
     }
 }
 function scrolling(e) {
