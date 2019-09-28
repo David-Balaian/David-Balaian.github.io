@@ -4,7 +4,7 @@ let arr = [];
 let currentElement;
 let perviouselement;
 let hasaddevent;
-
+alert(window.innerWidth,window.innerHeight)
 
 for (let i = 0; i < lines.length; i++) {
     lines[i].addEventListener("mouseenter", animlines);
@@ -32,6 +32,9 @@ for (let i = 0; i < sections.length; i++) {
 function scrolling(e) {
     e.preventDefault();
     e.stopPropagation();
+    if (window.innerWidth<=600){
+        alert("asdsda");
+    }
     if (!e.srcElement.id) {
         currentElement = e.srcElement.parentElement;
     } else {
