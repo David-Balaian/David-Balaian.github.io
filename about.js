@@ -40,7 +40,7 @@ function scrolling(e) {
     }else{
         deltaY = e.deltaY;
     }
-    alert("deltaY");
+    alert(deltaY);
     if (!e.srcElement.id) {
         currentElement = e.srcElement.parentElement;
     } else {
