@@ -3,8 +3,8 @@ let sections = document.body.getElementsByTagName("section");
 let arr = [];
 let currentElement;
 let perviouselement;
-let hasaddevent;
-alert(window.innerWidth,window.innerHeight)
+let TouchStartY;
+let TouchDeltaY;
 
 for (let i = 0; i < lines.length; i++) {
     lines[i].addEventListener("mouseenter", animlines);
@@ -25,15 +25,17 @@ function animlinesout(e) {
 for (let i = 0; i < sections.length; i++) {
     sections[i].addEventListener("wheel", scrolling);
     if (window.innerWidth<=1000){
-       sections[i].addEventListener("touchmove", scrolling);
-        alert("asdsda");
+       sections[i].addEventListener("touchstart", function(e){
+        TouchStartY = e.touches[0].clientY;
+       });
+       sections[i].addEventListener("touchend", scrolling);
     }
 }
 function scrolling(e) {
     e.preventDefault();
     e.stopPropagation();
-    if (window.innerWidth<=600){
-        alert("asdsda");
+    if (window.innerWidth<=1000){
+        e.deltaY = TouchStartY - e.touches[0].clientY; 
     }
     if (!e.srcElement.id) {
         currentElement = e.srcElement.parentElement;
