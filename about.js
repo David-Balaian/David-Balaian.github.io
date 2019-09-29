@@ -27,14 +27,16 @@ for (let i = 0; i < sections.length; i++) {
     sections[i].addEventListener("wheel", scrolling);
     if (window.innerWidth<=1000){
        sections[i].addEventListener("touchstart", function(e){
+           e.terget.preventDefault();
+           e.terget.stopPropagation();
         TouchStartY = e.touches[0].clientY;
        });
        sections[i].addEventListener("touchend", scrolling);
     }
 }
 function scrolling(e) {
-    e.preventDefault();
-    e.stopPropagation();
+    e.terget.preventDefault();
+    e.terget.stopPropagation();
     if (window.innerWidth<=1000){
         deltaY = TouchStartY - e.touches[0].clientY; 
     }else{
