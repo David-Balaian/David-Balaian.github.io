@@ -1,8 +1,4 @@
 
-html{
-    scroll-behavior: auto;
-
-}
 body{
     margin: 0;
 }
@@ -11,21 +7,45 @@ body::-webkit-scrollbar{
 }
 
 *{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     animation-name: none;
     animation-duration: 2s;
 }
-/* header{
+header{
+    position: fixed;
+    background-color: inherit;
     width:100%;
-    height: 1px;
+    height: 10%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid whitesmoke;
-    background-color: inherit;
-    
-} */
+    color: white;
+    opacity: 0;
+    z-index: 1;
+}
 
-#about{
+a{
+    text-decoration: none;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1rem;
+    border-bottom: 3px solid whitesmoke;
+    transition-duration: 1s;
+    padding: 5px;
+    width: 5%;
+}
+
+a:hover{
+    border-bottom: 3px solid darkblue;
+}
+@keyframes headers{
+    0%{}
+}
+
+
+
+#About{
     position: relative;
     background-image: url(./Files/earthview2.jpg);
     background-size: cover;
@@ -35,8 +55,7 @@ body::-webkit-scrollbar{
     align-items: center;
     width: 100%;
     height: 100vh;
-    animation-name: none;
-    animation-duration: 2s;
+
 }
 @keyframes sectionheigthrem{
     0%{height: 100vh;}
@@ -49,10 +68,7 @@ body::-webkit-scrollbar{
 h2{
     color: aliceblue;
     display: flex;
-    padding: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    animation-name: none;
-    animation-duration: 2s;
+
 }
 .aboutcontent{
     background-color: inherit;
@@ -63,17 +79,16 @@ h2{
     justify-content: center;
     align-items: center;
     border: 1px solid whitesmoke;
+    font-size: 20px;
     border-radius: 50px;
     text-align: center;
     opacity: 1;
-    animation-name: none;
-    animation-duration: 2s;
+
 }
 @keyframes opacityaboutcontenttozero{
     0%{opacity: 1;}
     100%{opacity: 0;}
 }
-
 @keyframes opacityaboutcontenttoone{
     0%{opacity: 0;}
     100%{opacity: 1;}
@@ -81,6 +96,7 @@ h2{
 
 .aboutcontent > button{
     position: relative;
+    display: block;
     width: 100%;
     height: 30px;
     border: none;
@@ -91,9 +107,6 @@ h2{
     color: aliceblue;
     margin-top: 10px;
 }
-
-
-
 .linetop{
     position: absolute;
     bottom:100%;
@@ -127,13 +140,12 @@ h2{
     100%{width: 100%}
 }
 
-#showprtfl{
+#Portfolio{
     width: 100%;
     height: 0;
     background-image: url(./Files/macbook_pro_apple_iphone_laptop_smartphone_office_notebook_108418_3840x2400.jpg);
     background-size: cover;
-    animation-name: none;
-    animation-duration: 2s;
+
 }
 .coverforbg{
     height: 100%;
@@ -143,8 +155,7 @@ h2{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    animation-name: none;
-    animation-duration: 2s;
+
 }
 .firstcol{
     width: 100%;
@@ -166,13 +177,12 @@ h2{
     100%{height: 0;}
 }
 
-#aaa{
+#CV{
     width: 100%;
     height: 0;
     background-image: url(./Files/311996.jpg);
     background-size: cover;
-    animation-name: none;
-    animation-duration: 2s;
+
 }
 
 .portfolioItem{
@@ -183,18 +193,18 @@ h2{
     padding: 0;
     border:none;
     outline: none;
-    width: 40vh;
-    height: 30vh;
+    width: 20%;
+    height: 30%;
     color: aliceblue;
     border-radius: 50px;
     opacity: 1;
     transition-duration: 1s;
+
 }
 .portfolioItem:hover{
     transition-duration: 1s;
-    border-radius: 50%;
-    height: 50vh;
-    width: 50vh;
+    /* transform: scale3d(1.2,1.2,1.2); */
+    box-shadow: 0 0 20px white;
 }
 .itemTitle{
     padding: 20px;
@@ -214,4 +224,23 @@ h2{
 #slide{
     background-image: url(./Files/KBIA_iYB_400x400.png);
     background-size: cover;
+}
+@media (max-width: 640px) and (orientation: portrait){
+    .aboutcontent{
+        width: 80%;
+    }
+    .portfolioItem{
+        width: 30%;
+        height: 20%;   
+    }
+}
+@media (max-width: 1000px) and (orientation: landscape){
+    .aboutcontent{
+        width: 80%;
+        font-size: 10px
+    }
+    .portfolioItem{
+        width: 20%;
+        height: 30%;   
+    }
 }
