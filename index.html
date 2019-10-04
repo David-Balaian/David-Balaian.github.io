@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./about.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="./about.css">
 </head>
+
 <body>
-        
-        <section id="about">
-                <header>
-            
-                    </header>
-            <!-- <div class="coverforbg"> -->
-            <h2>
-                David Balaian
-            </h2>
-            <div class="aboutcontent">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius accusamus est culpa rerum animi voluptatibus consequuntur libero aut debitis fugiat expedita itaque neque praesentium incidunt soluta, voluptate, temporibus vitae atque.</p>
-                    <button id="cv" onclick="scrolling()">CV <span class=""></span><span class=""></span></button>
-                    <button id="prtfl">Portfolio  <span class=""></span><span class=""></span> </button>
-                    <button id="sklls">Skills  <span class=""></span><span class=""></span></button>
-            </div>
-        <!-- </div> -->
-        </section>
-        <section id="showprtfl">
-                <div class="coverforbg">
-                    <button onclick="window.open('https://david-balaian.github.io/Tetris/')" class="portfolioItem" id="Tetris">
-                        <span class="itemTitle">
-                                Tetris
-                        </span>
-                    </button>
-                    <button  onclick="window.open('https://david-balaian.github.io/ToDolist/')" class="portfolioItem" id="todo">
-                            <span class="itemTitle">
-                                    To Do List
-                            </span>
-                    </button>
-                    <button onclick="window.open('https://david-balaian.github.io/SlideShow/')" class="portfolioItem" id="slide">
-                            <span class="itemTitle" >
-                                    SlideShow
-                            </span>
-                    </button>
+        <header id="header">
+                <h2>David Balaian</h2>
+                <a href="#about">About
+                        <span></span>
+                </a>
+                <a href="#showprtfl">Portfolio
+                        <span></span>
+                </a>
+                <a href="#CV">CV
+                        <span></span>
+                </a>
+
+        </header>
+        <section id="About">
+
+                <!-- <div class="coverforbg"> -->
+                <h2>
+                        David Balaian
+                </h2>
+                <div class="aboutcontent">
+                        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur corporis error non. Alias quod perspiciatis fugiat modi, assumenda harum dolores molestiae, reiciendis nemo nisi quaerat sed maiores, nostrum cupiditate quibusdam. </p>
+                        <button id="cv">CV <span class=""></span><span class=""></span></button>
+                        <button id="prtfl">Portfolio <span class=""></span><span class=""></span> </button>
+                        <button id="sklls">Skills <span class=""></span><span class=""></span></button>
                 </div>
-            </section>
-        <section id="aaa">
+                <!-- </div> -->
+        </section>
+        <section id="Portfolio">
+                <div class="coverforbg">
+                        <button onclick="window.open('https://david-balaian.github.io/Tetris/')" class="portfolioItem"
+                                id="Tetris">
+                                <span class="itemTitle">
+                                        Tetris
+                                </span>
+                        </button>
+                        <button onclick="window.open('https://david-balaian.github.io/ToDolist/')" class="portfolioItem"
+                                id="todo">
+                                <span class="itemTitle">
+                                        To Do List
+                                </span>
+                        </button>
+                        <button onclick="window.open('https://david-balaian.github.io/SlideShow/')"
+                                class="portfolioItem" id="slide">
+                                <span class="itemTitle">
+                                        SlideShow
+                                </span>
+                        </button>
+                </div>
+        </section>
+        <section id="CV">
                 <div class="coverforbg"></div>
-            </section>
-        
+        </section>
         <script src="./about.js"></script>
 </body>
+
 </html>
