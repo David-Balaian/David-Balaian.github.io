@@ -232,6 +232,7 @@ h2{
     .portfolioItem{
         width: 30%;
         height: 20%;   
+        border-radius: 15px;
     }
 }
 @media (max-width: 1000px) and (orientation: landscape){
