@@ -1,13 +1,17 @@
 let lines = document.body.querySelectorAll(".aboutcontent>button");
 let sections = document.body.getElementsByTagName("section");
+// document.getElementById("setList").addEventListener("click", showAsList);
+// document.getElementById("setAnimShow").addEventListener("click", showAsSlide);
+
 let currentElement;
 let perviouselement;
 let isAnimationEnded;
 let isTouchDevice;
 let TouchStartY;
 let deltaScroll;
+let showAnimatable = false;
 buttonlines();
-function buttonlines(){
+function buttonlines() {
     for (let i = 0; i < lines.length; i++) {
         lines[i].addEventListener("mouseenter", animlines);
         lines[i].addEventListener("mouseleave", animlinesout);
@@ -26,11 +30,11 @@ function buttonlines(){
     }
 }
 for (let i = 0; i < sections.length; i++) {
-    if(window.innerWidth<1000){
+    if (window.innerWidth < 1000) {
         isTouchDevice = true;
-        sections[i].addEventListener("touchstart",(e) => { TouchStartY = e.touches[0].clientY; },false);
-        sections[i].addEventListener("touchmove",scrolling ,false);
-    }else{
+        sections[i].addEventListener("touchstart", (e) => { TouchStartY = e.touches[0].clientY; }, false);
+        sections[i].addEventListener("touchmove", scrolling, false);
+    } else {
         sections[i].addEventListener("wheel", scrolling);
     }
 }
@@ -38,48 +42,52 @@ for (let i = 0; i < sections.length; i++) {
 function scrolling(e) {
     e.preventDefault();
     e.stopPropagation();
-    if(isTouchDevice){
-        // alert("width = " + window.innerWidth);
-        // alert("height = " + window.innerHeight);
-        deltaScroll=TouchStartY - e.touches[0].clientY;
+    
+    if (isTouchDevice) {
+        deltaScroll = TouchStartY - e.touches[0].clientY;
         currentElement = e.targetTouches[0].target;
-    }else{
+    } else {
         deltaScroll = e.deltaY;
-        
         currentElement = e.target;
     }
-    if (!currentElement.id) {
+    while (currentElement.tagName != "SECTION") {
+        if(currentElement.id == "containerforitems" && showAnimatable){
+            scrollOnSlide();
+            return;
+        }
         currentElement = currentElement.parentElement;
     }
+    currentElement.addEventListener("animationstart", () => isAnimationEnded = false);
+    currentElement.addEventListener("animationend", () => {isAnimationEnded = true;});
+    if (isAnimationEnded == false) { return }
 
-    currentElement.addEventListener("animationstart",() => isAnimationEnded = false);
-    currentElement.addEventListener("animationend",() => isAnimationEnded = true);
-    if(isAnimationEnded == false){return}
-    if ((e.srcElement.tagName != "SECTION") && (e.srcElement.tagName != "DIV")) { return }
+
     if (deltaScroll > 0) {
         if (currentElement.id == "CV") { return }
         displayheader(currentElement.nextElementSibling);
         children = currentElement.getElementsByTagName("*");
         let nextchildren = currentElement.nextElementSibling.getElementsByTagName("*");
         currentElement.style.animationName = "sectionheigthrem";
-        currentElement.nextElementSibling.style.animationName="sectionheigthadd";
+        currentElement.nextElementSibling.style.animationName = "sectionheigthadd";
         currentElement.style.height = 0;
         currentElement.nextElementSibling.style.height = "100vh";
         perviouselement = currentElement;
         animdelete(children);
         animadd(nextchildren);
     } else if (deltaScroll < 0) {
+        
         if (currentElement.id == "About") { return }
-        if(currentElement.previousElementSibling.id == "About"){buttonlines()}
+        if (currentElement.previousElementSibling.id == "About") { buttonlines() }
         displayheader(currentElement.previousElementSibling);
-        children = currentElement.previousElementSibling.getElementsByTagName("*"); 
+        children = currentElement.previousElementSibling.getElementsByTagName("*");
         let previouschildren = currentElement.getElementsByTagName("*");
-        currentElement.previousElementSibling.style.animationName="sectionheigthadd";
+        currentElement.previousElementSibling.style.animationName = "sectionheigthadd";
         currentElement.style.animationName = "sectionheigthrem";
         currentElement.style.height = 0;
         currentElement.previousElementSibling.style.height = "100vh";
         animadd(children);
         animdelete(previouschildren);
+        
     }
 }
 function animdelete(children) {
@@ -89,45 +97,43 @@ function animdelete(children) {
         children[i].style.animationName = "opacityaboutcontenttozero";
     }
     setTimeout(() => {
-        for(let i = 0; i<len; i++){
-            children[i].style.display = "none";            
+        for (let i = 0; i < len; i++) {
+            children[i].style.display = "none";
         }
     }, 2000);
 }
-
-
 function animadd(children) {
     let len = children.length;
     for (let i = 0; i < len; i++) {
-        children[i].style.display = "flex";            
+        let displayMode = (children[i].className=="itemTitle") ? "block" : "flex";
+        children[i].style.display = displayMode;
+        console.log(children[i].tagName)
         children[i].style.opacity = 1;
         children[i].style.animationName = "opacityaboutcontenttoone";
     }
 }
-
-
-function displayheader(element){
+function displayheader(element) {
     let header = document.getElementById("header");
     let headerchildes = header.querySelectorAll("a");
-    if(element.id != "About"){
-        header.style.opacity=1;
+    if (element.id != "About") {
+        header.style.opacity = 1;
         header.style.animationName = "opacityaboutcontenttoone";
         setTimeout(() => {
-            header.style.display = "flex";    
-            for(let el of headerchildes){
-                if(el.outerText == element.id){
-                    el.style.borderBottom =  "3px solid darkblue";
-                }else{
-                    el.style.borderBottom =  "3px solid whitesmoke";
+            header.style.display = "flex";
+            for (let el of headerchildes) {
+                if (el.outerText == element.id) {
+                    el.style.borderBottom = "3px solid darkblue";
+                } else {
+                    el.style.borderBottom = "3px solid whitesmoke";
                 }
-            }            
+            }
         }, 1000);
-    }else{
-        header.style.opacity=0;
+    } else {
+        header.style.opacity = 0;
         header.style.animationName = "opacityaboutcontenttozero";
         setTimeout(() => {
-            header.style.display = "none";       
+            header.style.display = "none";
         }, 1000);
     }
-    
 }
+
