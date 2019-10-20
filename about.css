@@ -82,6 +82,7 @@ h2{
     font-size: 20px;
     border-radius: 50px;
     text-align: center;
+    text-shadow: 1px 1px black;
     opacity: 1;
 
 }
