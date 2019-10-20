@@ -5,21 +5,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <title>Balaian's Homepage</title>
         <link rel="stylesheet" href="./about.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+                integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+                crossorigin="anonymous">
 </head>
 
 <body>
+        <div class="fixed">
+                <button id="setList"><i class="fas fa-th-large"></i> List </button>
+                <button id="setAnimShow"><i class="fas fa-arrows-alt-v"></i> Animationable </button>
+        </div>
         <header id="header">
                 <h2>David Balaian</h2>
-                <a href="#about">About
-                        <span></span>
-                </a>
+                
                 <a href="#showprtfl">Portfolio
-                        <span></span>
+                        <!-- <span></span> -->
                 </a>
                 <a href="#CV">CV
-                        <span></span>
+                        <!-- <span></span> -->
                 </a>
 
         </header>
@@ -30,37 +35,66 @@
                         David Balaian
                 </h2>
                 <div class="aboutcontent">
-                        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur corporis error non. Alias quod perspiciatis fugiat modi, assumenda harum dolores molestiae, reiciendis nemo nisi quaerat sed maiores, nostrum cupiditate quibusdam. </p>
-                        <button id="cv">CV <span class=""></span><span class=""></span></button>
+                        <p> Hello I'm David. Junior Web Developer is seeking an opportunity to extend my development skills  and knowledge.
+                                        <hr>
+                                As System Administrator I have almost 4 years of experience. Having strong experience with current well known PON technology also. 
+                                Analytical thinker and having the ability to organize and present complex solutions clearly and accurately. 
+                                <hr>
+                                Now trying to pass exactly the same way as Web Developer and reach same level as my first profession. </p>
+                        <!-- <button id="cv">CV <span class=""></span><span class=""></span></button>
                         <button id="prtfl">Portfolio <span class=""></span><span class=""></span> </button>
-                        <button id="sklls">Skills <span class=""></span><span class=""></span></button>
+                        <button id="sklls">Skills <span class=""></span><span class=""></span></button> -->
                 </div>
                 <!-- </div> -->
         </section>
         <section id="Portfolio">
                 <div class="coverforbg">
-                        <button onclick="window.open('https://david-balaian.github.io/Tetris/')" class="portfolioItem"
-                                id="Tetris">
-                                <span class="itemTitle">
-                                        Tetris
-                                </span>
-                        </button>
-                        <button onclick="window.open('https://david-balaian.github.io/ToDolist/')" class="portfolioItem"
-                                id="todo">
-                                <span class="itemTitle">
-                                        To Do List
-                                </span>
-                        </button>
-                        <button onclick="window.open('https://david-balaian.github.io/SlideShow/')"
-                                class="portfolioItem" id="slide">
-                                <span class="itemTitle">
-                                        SlideShow
-                                </span>
-                        </button>
+                        <h1>Portfolio</h1>
+                        <div id="containerforitems">
+                                <button onclick="window.open('https://david-balaian.github.io/ToDolist/')"
+                                        class="portfolioItem" id="todo">
+                                        <span class="itemTitle">
+                                                To Do List
+                                        </span>
+                                </button>
+                                <button onclick="window.open('https://david-balaian.github.io/Tetris/')"
+                                        class="portfolioItem" id="Tetris">
+                                        <span class="itemTitle">
+                                                Tetris
+                                        </span>
+                                </button>
+                                <button onclick="window.open('https://david-balaian.github.io/SlideShow/')"
+                                        class="portfolioItem" id="slide">
+                                        <span class="itemTitle">
+                                                SlideShow
+                                        </span>
+                                </button>
+                        </div>
                 </div>
         </section>
         <section id="CV">
-                <div class="coverforbg"></div>
+                <div class="coverforbg">
+                        <div id="containerforitems">
+                                <button onclick="window.open('https://www.facebook.com/balayan.david1')"
+                                        class="portfolioItem" id="facebookProfile">
+                                        <span class="itemTitle">
+                                                Facebook Account
+                                        </span>
+                                </button>
+                                <button onclick="window.open('https://docs.google.com/document/d/1WlaEvtk4VnS7t0R4sckzO00VQI5ZRHtYUgiN0qqbz-k/edit?usp=sharing')"
+                                        class="portfolioItem" id="CVGoogle">
+                                        <span class="itemTitle">
+                                                CV
+                                        </span>
+                                </button>
+                                <button onclick="window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=davidbalayan1@gmail.com&su=From&body&tf=1')"
+                                        class="portfolioItem" id="Gmail">
+                                        <span class="itemTitle">
+                                                Send me Mail
+                                        </span>
+                                </button>
+                        </div>
+                </div>
         </section>
         <script src="./about.js"></script>
 </body>
