@@ -1,9 +1,16 @@
 // Colors
 
 // The color palette
+$cols: (
+Blush: #F2D0D9,
+Cloud: #F2F2F2,
+Cornflower: #B8C6D9,
+Denimblue: #8596A6,
+Lightsalmon: #F2D9D0
+);
 $palette: (
 	light: (
-		1: #ECEDED,
+		1: #F2F2F2,
 		2: #9CA9B3,
 		3: #717D86
 	),
@@ -13,7 +20,7 @@ $palette: (
 		3: #33363A
 	),
 	primary: (
-		1: #8BC5C6,
+		1: #ebb7c5,
 		2: #ACADFF,
 		3: #333132,
 		4: #E9E9FF
