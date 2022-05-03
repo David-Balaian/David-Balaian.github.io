@@ -1,27 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a3179e7a58681932cb757b42fd8cf742",
+    "revision": "5d836c55e1eecd865d58df969b8d75fa",
     "url": "/index.html"
   },
   {
-    "revision": "77239a3e27841aba9c14",
-    "url": "/static/css/main.69a7ed2e.chunk.css"
+    "revision": "4d8cb85047df4f0c8466",
+    "url": "/static/css/main.b57cbf25.chunk.css"
   },
   {
-    "revision": "cb170ed7f435afc85587",
-    "url": "/static/js/2.27505fc1.chunk.js"
+    "revision": "a25bd14a7a8c7f05207f",
+    "url": "/static/js/2.f65f9005.chunk.js"
   },
   {
     "revision": "117d65892edc8adcd29d4a0d57b5a80a",
-    "url": "/static/js/2.27505fc1.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.f65f9005.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "77239a3e27841aba9c14",
-    "url": "/static/js/main.74f022fc.chunk.js"
+    "revision": "4d8cb85047df4f0c8466",
+    "url": "/static/js/main.8f518855.chunk.js"
   },
   {
     "revision": "c307e69827cf23a9bfac",
     "url": "/static/js/runtime-main.b8b9f84b.js"
+  },
+  {
+    "revision": "22f8930d33f395544eb0034b7de24f41",
+    "url": "/static/media/FreeSans.22f8930d.ttf"
+  },
+  {
+    "revision": "883265c3aa4b3a71adc7557ca58593cc",
+    "url": "/static/media/cover.883265c3.png"
   },
   {
     "revision": "3ce357e71a836a86691b904396a8955c",
@@ -52,6 +60,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/feature-tile-icon-06.6a177696.svg"
   },
   {
+    "revision": "f61aa004de215c63d0232272fb1318b7",
+    "url": "/static/media/icons8-facebook.f61aa004.svg"
+  },
+  {
+    "revision": "b8bd26b033216c05f9f8d8676d832939",
+    "url": "/static/media/icons8-gmail-logo.b8bd26b0.svg"
+  },
+  {
+    "revision": "fbb57ab4d8f7c9eec79993230d1d9140",
+    "url": "/static/media/icons8-instagram.fbb57ab4.svg"
+  },
+  {
     "revision": "51437ecf7253dd3bd93620ade79d50cb",
     "url": "/static/media/logo.51437ecf.svg"
   },
@@ -64,8 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/sub-buzz-86-1591886919-8.3948401c.jpg"
   },
   {
-    "revision": "913877495e55e5742e5c382ffc7cf87e",
-    "url": "/static/media/vegetables-1085063.91387749.jpg"
+    "revision": "524b527e5d60520baf1cc51df60240ec",
+    "url": "/static/media/vecteezy_baked-chicken-stuffed-apples-with-fresh-orange-in-the-baking_7181285_963.524b527e.jpg"
   },
   {
     "revision": "a622fc5dd8adcdd27ea42218385013b4",
