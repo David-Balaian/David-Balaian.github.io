@@ -3,10 +3,15 @@
 $font--provider:    'Google Fonts';
 $font--import:      'Inter:400,500,600,700,800';
 
+@font-face {
+	font-family: "arm";
+	src: url('../fonts/FreeSans.ttf');
+}
+
 // The font set
 $font--family: (
-	heading: 	'"Inter", sans-serif',
-	base:		'"Inter", sans-serif',
+	heading: 	'arm',
+	base:		'arm',
 	code: 		'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace',
 	pre: 		'"Courier 10 Pitch", Courier, monospace'
 );
